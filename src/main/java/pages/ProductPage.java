@@ -30,15 +30,11 @@ public class ProductPage {
         System.out.println("The price of the first item is: " + firstItemPrice);
         List<WebElement> addToCartButtons = driver.findElements(By.xpath("//input[@id='add-to-cart-button']"));
 
-        // Check the number of Add to Cart buttons found
         if (addToCartButtons.size() > 1) {
-            // If there are two or more buttons, click the second one
             addToCartButtons.get(1).click();
         } else if (addToCartButtons.size() == 1) {
-            // If there is only one button, click the first one
             addToCartButtons.get(0).click();
         } else {
-            // Handle the case where no buttons are found
             System.out.println("No Add to Cart button found");
         }
         Thread.sleep(2000);
