@@ -14,7 +14,7 @@ public class BaseClass {
     public WebDriver driver;
 
     public WebDriver init_setup(){
-        System.setProperty("webdriver.chrome.driver","/Users/maddyvenky/Downloads/chromedriver-mac-arm64/chromedriver");
+        System.setProperty("webdriver.chrome.driver","/Users/maddyvenky/Documents/AmazonAssignment/amazon/driver/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
         driver = new ChromeDriver(options);
