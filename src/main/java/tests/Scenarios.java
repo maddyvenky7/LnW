@@ -25,5 +25,20 @@ public class Scenarios extends BaseTest{
         addToCart.Addtocartpage();
         validation.Validationpage("","","");
     }
+    @Test(priority = 3)
+    public void TwoItems() throws InterruptedException {
+        String Title = homePage.Homepagetitle();
+        System.out.println("Title is "+ Title);
+        homePage.Search("Headphones");
+        searchPage.SelectProduct();
+        productPage.WindowHandler();
+        productPage.ProductItem();
+        homePage.Search("Keyboard");
+        searchPage.SelectProduct();
+        productPage.WindowHandler();
+        productPage.ProductMultipleItems();
+        addToCart.Addtocartpage_MultipleItems();
+        validation.Validationpage_MultipleItems("","","","","","");
+    }
 
 }
