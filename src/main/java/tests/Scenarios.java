@@ -25,7 +25,7 @@ public class Scenarios extends BaseTest{
         addToCart.Addtocartpage();
         validation.Validationpage("","","");
     }
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void TwoItems() throws InterruptedException {
         String Title = homePage.Homepagetitle();
         System.out.println("Title is "+ Title);

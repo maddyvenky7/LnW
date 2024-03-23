@@ -33,7 +33,10 @@ public class ProductPage {
 
     public String ProductItem() throws InterruptedException {
         Thread.sleep(2000);
-        List<WebElement> pricetag = driver.findElements(By.xpath("//*[@id='corePriceDisplay_desktop_feature_div']/div[1]/span[3]/span[2]/span[2]"));
+        WebElement product = driver.findElement(By.xpath("//div[@id='titleSection']"));
+        String ProductTitle = product.getText();
+        System.out.println("Product Name "+ProductTitle);
+        List<WebElement> pricetag = driver.findElements(By.xpath("//div[@id='corePriceDisplay_desktop_feature_div']//span[contains(@class, 'a-price') and contains(@class, 'a-price-whole')]"));
         String firstItemPrice = pricetag.get(0).getText().trim()+".00";
         System.out.println("The price of the first item is: " + firstItemPrice);
         List<WebElement> addToCartButtons = driver.findElements(By.xpath("//input[@id='add-to-cart-button']"));
@@ -66,7 +69,10 @@ public class ProductPage {
 
     public String ProductMultipleItems() throws InterruptedException {
         Thread.sleep(2000);
-        List<WebElement> pricetag = driver.findElements(By.xpath("//*[@id='corePriceDisplay_desktop_feature_div']/div[1]/span[3]/span[2]/span[2]"));
+        WebElement product = driver.findElement(By.xpath("//div[@id='titleSection']"));
+        String ProductTitle = product.getText();
+        System.out.println("Product Name "+ProductTitle);
+        List<WebElement> pricetag = driver.findElements(By.xpath("//div[@id='corePriceDisplay_desktop_feature_div']//span[contains(@class, 'a-price') and contains(@class, 'a-price-whole')]"));
         String firstItemPrice2 = pricetag.get(0).getText().trim()+".00";
         System.out.println("The price of the first item is: " + firstItemPrice2);
         List<WebElement> addToCartButtons = driver.findElements(By.xpath("//input[@id='add-to-cart-button']"));
